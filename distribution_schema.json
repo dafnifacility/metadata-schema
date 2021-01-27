@@ -1,0 +1,80 @@
+{
+    "dcat:distribution": {
+        "type": "array",
+        "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "const": "dcat:Distribution"
+                },
+                "@id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcat:title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcat:accessURL": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dcat:downloadURL": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "dct:conformsTo": {
+                    "type": "object",
+                    "properties": {
+                        "@type": {
+                            "type": "string"
+                        },
+                        "@id": {
+                            "type": "string"
+                        },
+                        "rdfs:label": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "csvw:tableSchema": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "csvw:columns": {
+                            "type": "array",
+                            "items": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "@type": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "dct:description": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

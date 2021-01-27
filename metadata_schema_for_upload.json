@@ -1,0 +1,637 @@
+{
+    "type": "object",
+    "title": "DAFNI Metadata Schema",
+    "description": "This schema provides a reference to validate metadata against in the backend. ",
+    "required": [
+        "@context",
+        "@type",
+        "dct:language",
+        "dct:title",
+        "dct:description",
+        "dcat:keyword",
+        "dct:subject",
+        "dct:license",
+        "dct:creator",
+        "dcat:contactPoint",
+        "dct:created",
+        "dct:spatial",
+        "geojson",
+        "dct:PeriodOfTime",
+        "dafni_version_note"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "@context": {
+            "type": "array",
+            "minitems": 1,
+            "items": {
+                "type": "string"
+            }
+        },
+        "@type": {
+            "type": "string",
+            "const": "dcat:Dataset"
+        },
+        "dct:identifier": {
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "dcat:landingPage": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dct:language": {
+            "type": "string",
+            "enum": [
+                "aa",
+                "ab",
+                "ae",
+                "af",
+                "ak",
+                "am",
+                "an",
+                "ar",
+                "as",
+                "av",
+                "ay",
+                "az",
+                "ba",
+                "be",
+                "bg",
+                "bh",
+                "bi",
+                "bm",
+                "bn",
+                "bo",
+                "br",
+                "bs",
+                "ca",
+                "ce",
+                "ch",
+                "co",
+                "cr",
+                "cs",
+                "cu",
+                "cv",
+                "cy",
+                "da",
+                "de",
+                "dv",
+                "dz",
+                "ee",
+                "el",
+                "en",
+                "eo",
+                "es",
+                "et",
+                "eu",
+                "fa",
+                "ff",
+                "fi",
+                "fj",
+                "fo",
+                "fr",
+                "fy",
+                "ga",
+                "gd",
+                "gl",
+                "gn",
+                "gu",
+                "gv",
+                "ha",
+                "he",
+                "hi",
+                "ho",
+                "hr",
+                "ht",
+                "hu",
+                "hy",
+                "hz",
+                "ia",
+                "id",
+                "ie",
+                "ig",
+                "ii",
+                "ik",
+                "io",
+                "is",
+                "it",
+                "iu",
+                "ja",
+                "jv",
+                "ka",
+                "kg",
+                "ki",
+                "kj",
+                "kk",
+                "kl",
+                "km",
+                "kn",
+                "ko",
+                "kr",
+                "ks",
+                "ku",
+                "kv",
+                "kw",
+                "ky",
+                "la",
+                "lb",
+                "lg",
+                "li",
+                "ln",
+                "lo",
+                "lt",
+                "lu",
+                "lv",
+                "mg",
+                "mh",
+                "mi",
+                "mk",
+                "ml",
+                "mn",
+                "mr",
+                "ms",
+                "mt",
+                "my",
+                "na",
+                "nb",
+                "nd",
+                "ne",
+                "ng",
+                "nl",
+                "nn",
+                "no",
+                "nr",
+                "nv",
+                "ny",
+                "oc",
+                "oj",
+                "om",
+                "or",
+                "os",
+                "pa",
+                "pi",
+                "pl",
+                "ps",
+                "pt",
+                "qu",
+                "rm",
+                "rn",
+                "ro",
+                "ru",
+                "rw",
+                "sa",
+                "sc",
+                "sd",
+                "se",
+                "sg",
+                "si",
+                "sk",
+                "sl",
+                "sm",
+                "sn",
+                "so",
+                "sq",
+                "sr",
+                "ss",
+                "st",
+                "su",
+                "sv",
+                "sw",
+                "ta",
+                "te",
+                "tg",
+                "th",
+                "ti",
+                "tk",
+                "tl",
+                "tn",
+                "to",
+                "tr",
+                "ts",
+                "tt",
+                "tw",
+                "ty",
+                "ug",
+                "uk",
+                "ur",
+                "uz",
+                "ve",
+                "vi",
+                "vo",
+                "wa",
+                "wo",
+                "xh",
+                "yi",
+                "yo",
+                "za",
+                "zh",
+                "zu"
+            ]
+        },
+        "dct:title": {
+            "type": "string"
+        },
+        "dct:description": {
+            "type": "string"
+        },
+        "dcat:keyword": {
+            "type": "array",
+            "minitems": 1,
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "dct:subject": {
+            "type": "string",
+            "enum": [
+                "Biota",
+                "Boundaries",
+                "Climatology / Meteorology / Atmosphere",
+                "Economy",
+                "Elevation",
+                "Environment",
+                "Farming",
+                "Geoscientific Information",
+                "Health",
+                "Imagery / Base Maps / Earth Cover",
+                "Inland Waters",
+                "Intelligence / Military",
+                "Location",
+                "Oceans",
+                "Planning / Cadastre",
+                "Society",
+                "Structure",
+                "Transportation",
+                "Utilities / Communication"
+            ]
+        },
+        "dcat:theme": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string",
+                    "enum": [
+                        "Addresses",
+                        "Administrative units",
+                        "Agricultural and aquaculture facilities",
+                        "Area management / restriction / regulation zones & reporting units",
+                        "Atmospheric conditions",
+                        "Bio-geographical regions",
+                        "Buildings",
+                        "Cadastral parcels",
+                        "Coordinate reference systems",
+                        "Elevation",
+                        "Energy Resources",
+                        "Environmental monitoring Facilities",
+                        "Geographical grid systems",
+                        "Geographical names",
+                        "Geology",
+                        "Habitats and biotopes",
+                        "Human health and safety",
+                        "Hydrology",
+                        "Land cover",
+                        "Land use",
+                        "Meteorological geographical features",
+                        "Mineral Resources",
+                        "Natural risk zones",
+                        "Oceanographic geographical features",
+                        "Orthoimagery",
+                        "Population distribution and demography",
+                        "Production and industrial facilities",
+                        "Protected sites",
+                        "Sea regions",
+                        "Soil",
+                        "Species distribution",
+                        "Statistical units",
+                        "Transport networks",
+                        "Utility and governmental services"
+                    ]
+                }
+            ]
+        },
+        "dct:conformsTo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "@id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "@type": {
+                    "const": "dct:Standard"
+                },
+                "label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "dct:publisher": {
+            "type": "object",
+            "properties": {
+                "additionalProperties": false,
+                "@id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "@type": {
+                    "type": "string",
+                    "enum": [
+                        "foaf:Organization",
+                        "foaf:Person"
+                    ]
+                },
+                "foaf:name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "internalID": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "dct:creator": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "@type": {
+                            "type": "string",
+                            "enum": [
+                                "foaf:Organization",
+                                "foaf:Person"
+                            ]
+                        },
+                        "@id": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "foaf:name": {
+                            "type": "string"
+                        },
+                        "internalID": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "@type",
+                        "foaf:name"
+                    ]
+                }
+            ]
+        },
+        "prov:qualifiedAttribution": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "@type": {
+                            "type": "string"
+                        },
+                        "@id": {
+                            "type": "string"
+                        },
+                        "foaf:name": {
+                            "type": "string"
+                        },
+                        "internalID": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "dcat:contactPoint": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "const": "vcard:Organization"
+                },
+                "vcard:fn": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "vcard:hasEmail": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "dct:license": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "type": "string",
+                    "const": "LicenseDocument"
+                },
+                "@id": {
+                    "type": "string"
+                },
+                "rdfs:label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "dct:rights": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dct:created": {
+            "type": "string"
+        },
+        "dct:PeriodOfTime": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "const": "dct:PeriodOfTime"
+                },
+                "time:hasBeginning": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time:hasEnd": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "dct:accrualPeriodicity": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "Triennial",
+                        "Biennial",
+                        "Annual",
+                        "Semiannual",
+                        "Three times a year",
+                        "Quaterly",
+                        "Bimonthly",
+                        "Monthly",
+                        "Semimonthly",
+                        "Biweekly",
+                        "Three times a month",
+                        "Weekly",
+                        "Semiweekly",
+                        "Three times a week",
+                        "Daily",
+                        "Continuous",
+                        "Irregular"
+                    ]
+                }
+            ]
+        },
+        "dct:spatial": {
+            "type": "object",
+            "properties": {
+                "@id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "@type": {
+                    "type": "string",
+                    "const": "dct:Location"
+                },
+                "rdfs:label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "geojson": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "id": "http://json-schema.org/geojson/geojson.json#",
+            "title": "Geo JSON object",
+            "description": "Schema for a Geo JSON object",
+            "type": "object",
+            "definitions": {
+                "geometryCollection": {
+                    "title": "GeometryCollection",
+                    "description": "A collection of geometry objects",
+                    "required": [
+                        "geometries"
+                    ],
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "GeometryCollection"
+                            ]
+                        },
+                        "geometries": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://json-schema.org/geojson/geometry.json#"
+                            }
+                        }
+                    }
+                },
+                "feature": {
+                    "title": "Feature",
+                    "description": "A Geo JSON feature object",
+                    "required": [
+                        "geometry",
+                        "properties"
+                    ],
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "Feature"
+                            ]
+                        },
+                        "geometry": {
+                            "oneOf": [
+                                {
+                                    "type": "null"
+                                },
+                                {
+                                    "$ref": "http://json-schema.org/geojson/geometry.json#"
+                                }
+                            ]
+                        },
+                        "properties": {
+                            "type": [
+                                "object",
+                                "null"
+                            ]
+                        },
+                        "id": {
+                            "FIXME": "may be there, type not known (string? number?)"
+                        }
+                    }
+                },
+                "featureCollection": {
+                    "title": "FeatureCollection",
+                    "description": "A Geo JSON feature collection",
+                    "required": [
+                        "features"
+                    ],
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "FeatureCollection"
+                            ]
+                        },
+                        "features": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/feature"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "dafni_version_note": {
+            "type": "string"
+        }
+    }
+}
