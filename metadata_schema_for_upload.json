@@ -519,7 +519,14 @@
         },
         "dct:created": {
             "type": "string",
-            "format": "date-time"
+            "anyOf": [
+                {
+                    "format": "date-time"
+                },
+                {
+                    "format": "date"
+                }
+            ]
         },
         "dct:PeriodOfTime": {
             "type": "object",
@@ -538,11 +545,25 @@
                         },
                         "time:hasBeginning": {
                             "type": "string",
-                            "format": "date-time"
+                            "anyOf": [
+                                {
+                                    "format": "date-time"
+                                },
+                                {
+                                    "format": "date"
+                                }
+                            ]
                         },
                         "time:hasEnd": {
                             "type": "string",
-                            "format": "date-time"
+                            "anyOf": [
+                                {
+                                    "format": "date-time"
+                                },
+                                {
+                                    "format": "date"
+                                }
+                            ]
                         }
                     }
                 },
