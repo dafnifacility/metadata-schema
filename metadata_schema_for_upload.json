@@ -624,7 +624,10 @@
                     "additionalProperties": false,
                     "properties": {
                         "@id": {
-                            "type": "string",
+                            "type": [
+                                "string",
+                                "number"
+                            ],
                             "minLength": 1
                         },
                         "@type": {
