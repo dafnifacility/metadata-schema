@@ -431,7 +431,11 @@
                                 "minLength": 1
                             },
                             "internalID": {
-                                "type": "null"
+                                "type": [
+                                    "null",
+                                    "string"
+                                ],
+                                "minLength": 1
                             }
                         }
                     },
