@@ -1907,6 +1907,36 @@
         "dafni_version_note": {
             "type": "string",
             "minLength": 1
+        },
+        "dafni_internal_properties": {
+            "type": "object",
+            "properties": {
+                "storage_location": {
+                    "type": "string",
+                    "enum": [
+                        "S3",
+                        "NFS"
+                    ]
+                },
+                "nfs_path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "storage_location"
+            ],
+            "if": {
+                "properties": {
+                    "storage_location": {
+                        "const": "NFS"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "nfs_path"
+                ]
+            }
         }
     }
 }
