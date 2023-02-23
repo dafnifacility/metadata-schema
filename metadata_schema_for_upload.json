@@ -528,24 +528,63 @@
         },
         "dct:spatial": {
             "type": "object",
-            "properties": {
-                "@id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+            "required": [
+                "@type",
+                "rdfs:label"
+            ],
+            "anyOf": [
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "@id": {
+                            "type": "null"
+                        },
+                        "@type": {
+                            "type": "string",
+                            "const": "dct:Location"
+                        },
+                        "rdfs:label": {
+                            "type": "string",
+                            "minLength": 1
+                        }
+                    }
                 },
-                "@type": {
-                    "type": "string",
-                    "const": "dct:Location"
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "@id": {
+                            "type": [
+                                "string",
+                                "number"
+                            ],
+                            "minLength": 1
+                        },
+                        "@type": {
+                            "type": "string",
+                            "const": "dct:Location"
+                        },
+                        "rdfs:label": {
+                            "type": "string",
+                            "minLength": 1
+                        }
+                    }
                 },
-                "rdfs:label": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "@id": {
+                            "type": "null"
+                        },
+                        "@type": {
+                            "type": "string",
+                            "const": "dct:Location"
+                        },
+                        "rdfs:label": {
+                            "type": "null"
+                        }
+                    }
                 }
-            }
+            ]
         },
         "geojson": {
             "$schema": "http://json-schema.org/draft-04/schema#",
