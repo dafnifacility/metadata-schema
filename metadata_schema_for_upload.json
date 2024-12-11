@@ -671,6 +671,50 @@
         },
         "dafni_version_note": {
             "type": "string"
+        },
+        "project": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                }
+            }
+        },
+        "funding": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dataset_source": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "embargo_end_date": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "anyOf": [
+                {
+                    "format": "date-time"
+                },
+                {
+                    "format": "date"
+                }
+            ]
         }
     }
 }
