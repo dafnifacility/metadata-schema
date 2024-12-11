@@ -685,7 +685,8 @@
                     "type": [
                         "string",
                         "null"
-                    ]
+                    ],
+                    "format": "uri"
                 }
             }
         },
@@ -705,6 +706,14 @@
             "type": [
                 "string",
                 "null"
+            ],
+            "anyOf": [
+                {
+                    "format": "date-time"
+                },
+                {
+                    "format": "date"
+                }
             ]
         }
     }
