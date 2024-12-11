@@ -674,6 +674,8 @@
         },
         "project": {
             "type": "object",
+            "required": ["name", "url"],
+            "additionalProperties": false,
             "properties": {
                 "name": {
                     "type": [
