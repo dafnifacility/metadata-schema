@@ -698,13 +698,13 @@
                 "null"
             ]
         },
-        "dataset_source": {
+        "datasetSource": {
             "type": [
                 "string",
                 "null"
             ]
         },
-        "embargo_end_date": {
+        "embargoEndDate": {
             "type": [
                 "string",
                 "null"
