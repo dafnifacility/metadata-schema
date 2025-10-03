@@ -589,12 +589,28 @@
                     "type": [
                         "string",
                         "null"
+                    ],
+                    "anyOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        }
                     ]
                 },
                 "time:hasEnd": {
                     "type": [
                         "string",
                         "null"
+                    ],
+                    "anyOf": [
+                        {
+                            "format": "date-time"
+                        },
+                        {
+                            "format": "date"
+                        }
                     ]
                 }
             }
